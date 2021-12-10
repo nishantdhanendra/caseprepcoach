@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "case_repositories#index"
   resources :case_repositories
   devise_for :user_data
   resources :user_data
