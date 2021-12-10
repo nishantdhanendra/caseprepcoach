@@ -3,7 +3,7 @@ class CaseRepositoriesController < ApplicationController
 
   # GET /case_repositories
   def index
-    @case_repositories = CaseRepository.all
+    @case_repositories = CaseRepository.page(params[:page]).per(10)
   end
 
   # GET /case_repositories/1
