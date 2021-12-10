@@ -3,7 +3,8 @@ class CaseRepositoriesController < ApplicationController
 
   # GET /case_repositories
   def index
-    @case_repositories = CaseRepository.page(params[:page]).per(10)
+    @q = CaseRepository.ransack(params[:q])
+    @case_repositories = @q.result(:distinct => true).page(params[:page]).per(10)
   end
 
   # GET /case_repositories/1
