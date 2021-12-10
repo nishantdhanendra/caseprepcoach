@@ -1,7 +1,6 @@
 <% was_validated = user_datum.errors.any? %>
 
 <%= form_with(model: user_datum, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <% user_class = "form-control" %>
     <% user_was_invalid = user_datum.errors.include?(:user) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :user_id %>
-    <!-- Input for user_id start -->
     <%= f.number_field :user_id, class: user_class, placeholder: "Enter user" %>
-    <!-- Input for user_id end -->
     <% if user_was_invalid %>
       <% user_datum.errors.full_messages_for(:user).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_id end -->
-  <!-- Label and input for user_name start -->
   <div class="form-group">
     <% user_name_class = "form-control" %>
     <% user_name_was_invalid = user_datum.errors.include?(:user_name) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :user_name %>
-    <!-- Input for user_name start -->
     <%= f.text_field :user_name, class: user_name_class, placeholder: "Enter user name" %>
-    <!-- Input for user_name end -->
     <% if user_name_was_invalid %>
       <% user_datum.errors.full_messages_for(:user_name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_name end -->
-  <!-- Label and input for user_goal start -->
   <div class="form-group">
     <% user_goal_class = "form-control" %>
     <% user_goal_was_invalid = user_datum.errors.include?(:user_goal) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :user_goal %>
-    <!-- Input for user_goal start -->
     <%= f.text_field :user_goal, class: user_goal_class, placeholder: "Enter user goal" %>
-    <!-- Input for user_goal end -->
     <% if user_goal_was_invalid %>
       <% user_datum.errors.full_messages_for(:user_goal).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_goal end -->
-  <!-- Label and input for self_assessment_score start -->
   <div class="form-group">
     <% self_assessment_score_class = "form-control" %>
     <% self_assessment_score_was_invalid = user_datum.errors.include?(:self_assessment_score) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :self_assessment_score %>
-    <!-- Input for self_assessment_score start -->
     <%= f.number_field :self_assessment_score, class: self_assessment_score_class, placeholder: "Enter self assessment score" %>
-    <!-- Input for self_assessment_score end -->
     <% if self_assessment_score_was_invalid %>
       <% user_datum.errors.full_messages_for(:self_assessment_score).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,6 +89,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for self_assessment_score end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
