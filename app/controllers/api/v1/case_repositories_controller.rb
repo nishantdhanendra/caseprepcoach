@@ -13,7 +13,7 @@ class Api::V1::CaseRepositoriesController < Api::V1::GraphitiController
     case_repository = CaseRepositoryResource.build(params)
 
     if case_repository.save
-      render jsonapi: case_repository, status: 201
+      render jsonapi: case_repository, status: :created
     else
       render jsonapi_errors: case_repository
     end
@@ -33,7 +33,7 @@ class Api::V1::CaseRepositoriesController < Api::V1::GraphitiController
     case_repository = CaseRepositoryResource.find(params)
 
     if case_repository.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: case_repository
     end

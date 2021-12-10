@@ -12,5 +12,4 @@ class UserDatumResource < ApplicationResource
   # Direct associations
 
   # Indirect associations
-
 end

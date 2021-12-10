@@ -7,5 +7,4 @@ class CaseRepositoryResource < ApplicationResource
   # Direct associations
 
   # Indirect associations
-
 end

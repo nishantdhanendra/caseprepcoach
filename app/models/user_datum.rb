@@ -1,15 +1,14 @@
 class UserDatum < ApplicationRecord
-  
   include JwtToken
-# Direct associations
+  # Direct associations
 
   # Indirect associations
 
   # Validations
 
-  validates :user_id, :uniqueness => { :scope => [:user_name] }
+  validates :user_id, uniqueness: { scope: [:user_name] }
 
-  validates :user_id, :presence => true
+  validates :user_id, presence: true
 
   # Scopes
 
