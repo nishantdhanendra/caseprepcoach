@@ -1,5 +1,7 @@
 ActiveAdmin.register UserDatum do
 
+ permit_params :user_id, :user_name, :user_goal, :self_assessment_score, :email, :password
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
