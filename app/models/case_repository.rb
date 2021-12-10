@@ -5,6 +5,8 @@ class CaseRepository < ApplicationRecord
 
   # Validations
 
+  validates :user_id, :uniqueness => true
+
   validates :user_id, :presence => true
 
   # Scopes
